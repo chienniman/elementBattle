@@ -1,0 +1,119 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold;
+}
+
+w-100 {
+  width: 100%;
+}
+
+d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.player {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.player .buttons {
+  width: 200px;
+}
+
+.player .buttons button {
+  cursor: -webkit-grab;
+  cursor: grab;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.player .buttons button:nth-child(1):hover {
+  background: blue;
+  color: aqua;
+}
+
+.player .buttons button:nth-child(2):hover {
+  background: red;
+}
+
+.player .buttons button:nth-child(3):hover {
+  background: #60e1f1;
+  color: green;
+}
+
+.player .buttons button:nth-child(4):hover {
+  background: #bcf816;
+}
+
+.player .buttons button:nth-child(5):hover {
+  background: chocolate;
+}
+
+.player span {
+  margin-top: 5px;
+}
+
+.boss {
+  text-align: center;
+}
+
+.boss .boss_message_box {
+  height: 300px;
+  overflow: scroll;
+}
+
+.element-counter {
+  position: relative;
+  padding-top: 10px;
+}
+
+.element-counter span {
+  position: absolute;
+  top: 220px;
+  left: 0;
+}
+
+canvas {
+  border-radius: 20PX;
+}
+
+.message_box {
+  width: 100%;
+  font-size: 30px;
+  position: absolute;
+  text-align: center;
+  bottom: 100px;
+}
+
+.message_box span {
+  color: red;
+}
+
+.message_box span:nth-child(2) {
+  color: blue;
+}
+
+.boss_message_box span {
+  color: red;
+}
+/*# sourceMappingURL=game.css.map */

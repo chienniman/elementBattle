@@ -1,0 +1,87 @@
+*{
+    box-sizing:border-box;
+    font-weight: bold;
+  }
+  w-100{
+    width: 100%;
+  }
+  d-flex{
+    display: flex;
+  }
+  .wrapper{
+    display: flex;
+    justify-content:space-around;
+  }
+  .player{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    .buttons{
+      width: 200px;
+      button{
+        cursor: grab;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+            }
+      button:nth-child(1):hover{
+       background:blue;
+       color: aqua;
+      }
+      button:nth-child(2):hover{
+        background: red;
+       }
+       button:nth-child(3):hover{
+        background: rgb(96, 225, 241);
+        color:green;
+       }
+       button:nth-child(4):hover{
+        background: rgb(188, 248, 22);
+       }
+       button:nth-child(5):hover{
+        background: chocolate;
+       }
+    }
+    span{
+      margin-top: 5px;
+    }
+  }
+  .boss{
+    text-align: center;
+    .boss_message_box{
+      height: 300px;
+      overflow: scroll;
+    }
+  }
+  .element-counter{
+    position: relative;
+    padding-top: 10px;
+    span{
+      position: absolute;
+      top: 220px;
+      left: 0;
+    }
+  }
+    canvas{
+        border-radius: 20PX;
+    }
+  .message_box{
+    width: 100%;
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+    bottom: 100px;
+    span{
+      color: red;
+    }
+    span:nth-child(2){
+      color: blue;
+    }
+  } 
+  .boss_message_box{
+    span{
+      color: red;
+    }
+  }   
