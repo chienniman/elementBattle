@@ -24,20 +24,31 @@ var player=document.querySelectorAll('.buttons button')
 var messageBox=document.querySelector('.message_box')
 var boss_message_box=document.querySelector('.boss_message_box')
 player.forEach((btn,index)=>{
-    var count=0;
+    var count=1;
     btn.addEventListener('click',function(){
+        boss_attack=skills(Math.floor(Math.random()*5+1))
+        //boss隨機攻擊
+        player_attack=skills(index+1)
+        //player攻擊
+        messageBox.innerHTML= 
+        '玩家出的攻擊是'+`<span id="player_msg_color">${player_attack}</span>`+'&nbsp&nbsp&nbsp&nbsp'+'boss的反擊是'+`<span id="boss_msg_color">${boss_attack}</span>`
+        boss_message_box.innerHTML+=`第${count}回&nbsp<br>`+'boss的血量'+`<span>${boss_hp}</span>`+'&nbsp&nbsp'+'使用'+boss_attack+'<br>'
         count++;
-        boss=Math.floor(Math.random()*5+1);
-        messageBox.innerHTML= '玩家出的攻擊是'+`<span>${skills(index+1)}</span>`+'&nbsp&nbsp&nbsp&nbsp'+'boss的反擊是'+`<span>${skills(boss)}</span>`
-        boss_message_box.innerHTML+=count+'-'+'boss的血量'+`<span>${boss_hp}</span>`+'&nbsp&nbsp'+'使用'+`<mark>${skills(boss)}</mark>`+'反擊'+'<br>'
+        //在頁面顯示boss、player出的招式
+        var player_msg_color=document.querySelector('#player_msg_color')
+        player_msg_color.style.color=color(player_attack)
+        //根據玩家出的招改顏色
+        var boss_msg_color=document.querySelector('#boss_msg_color')
+        boss_msg_color.style.color=color(boss_attack)
     }
     )
 }
 )
+
 //玩家與魔王技能代碼
 function skills(num){
     if(num==1){
-        return "水之刃"
+        return "水之刃";
     }else if(num==2){
         return "火之刃"
     }else if(num==3){
@@ -46,6 +57,21 @@ function skills(num){
         return "雷之刃"
     }else if(num==5){
         return "土之刃"
+    }
+}
+
+//技能對應色碼，用於對話框的顏色顯示
+function color(skill){
+    if(skill=="水之刃"){
+        return "blue"
+    }else if(skill=="火之刃"){
+        return "red"
+    }else if(skill=="風之刃"){
+        return "aqua"
+    }else if(skill=="雷之刃"){
+        return "yellowgreen"
+    }else if(skill=="土之刃"){
+        return "chocolate"
     }
 }
 //boss攻擊模式程式碼

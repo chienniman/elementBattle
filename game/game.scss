@@ -1,6 +1,7 @@
 *{
     box-sizing:border-box;
     font-weight: bold;
+    overflow: hidden;
   }
   w-100{
     width: 100%;
@@ -8,9 +9,21 @@
   d-flex{
     display: flex;
   }
+  .container{
+    height: 100vh;
+    background-image: url(../pics/bg-pic.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  } 
   .wrapper{
+   
     display: flex;
     justify-content:space-around;
+    padding-bottom:200px;
+    background: whitesmoke;
+    opacity: 0.9;
+    z-index: 999;
   }
   .player{
     width: 250px;
