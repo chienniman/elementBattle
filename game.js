@@ -26,20 +26,55 @@ var boss_message_box=document.querySelector('.boss_message_box')
 player.forEach((btn,index)=>{
     var count=1;
     btn.addEventListener('click',function(){
-        boss_attack=skills(Math.floor(Math.random()*5+1))
         //boss隨機攻擊
-        player_attack=skills(index+1)
+        var boss_attack_id=Math.floor(Math.random()*5+1)
+        boss_attack=skills(boss_attack_id);
         //player攻擊
+        var player_attack_id=index+1;
+        player_attack=skills(player_attack_id)
+        //在頁面顯示boss、player出的招式
         messageBox.innerHTML= 
         '玩家出的攻擊是'+`<span id="player_msg_color">${player_attack}</span>`+'&nbsp&nbsp&nbsp&nbsp'+'boss的反擊是'+`<span id="boss_msg_color">${boss_attack}</span>`
         boss_message_box.innerHTML+=`第${count}回&nbsp<br>`+'boss的血量'+`<span>${boss_hp}</span>`+'&nbsp&nbsp'+'使用'+boss_attack+'<br>'
         count++;
-        //在頁面顯示boss、player出的招式
+         //根據玩家出的招改訊息框文字顏色
         var player_msg_color=document.querySelector('#player_msg_color')
         player_msg_color.style.color=color(player_attack)
-        //根據玩家出的招改顏色
+
         var boss_msg_color=document.querySelector('#boss_msg_color')
         boss_msg_color.style.color=color(boss_attack)
+       
+        var result=boss_attack_id-player_attack_id
+        var damage;
+        // if(result==0){
+        //     console.log('雙方隨機輕微治療++++');
+        // }else if(result==-1 || result==4){
+        //     console.log('玩家嚴重傷害'); 
+        // damage 
+        // }else if(result==1 || result==-4){
+        //     console.log('魔王嚴重傷害'); 
+        // }else{
+        //     console.log('雙方隨機輕微傷害-----'); 
+        // }
+        function hp_check(){
+            if(hp==0){
+                hp=0;
+                alert('您的召喚獸小痔已經被擊殺');
+                var keepPlaying=confirm('是否重新開始')
+                if(keepPlaying){
+                    window.location.reload();
+                }else{
+                    alert('Game Over gg')
+                }
+            }else{
+                hp-=30
+            }
+            container.hpStatus.width = hp;
+            hpBar.innerHTML='小痔的剩餘血量是:'+hp
+        }
+       
+        // console.log(result,'boss出的攻擊',boss_attack_id,boss_attack,'玩家出的攻擊',player_attack_id,player_attack)
+
     }
     )
 }
